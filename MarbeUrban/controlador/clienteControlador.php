@@ -1,12 +1,14 @@
 <?php
 
+require_once "modelo/clienteModelo.php";
+
 function adicionar () {
 	if (ehPost ()) {
 		$nome = $_POST ["nome"];
 		$sobnome = $_POST ["sobnome"];
-		$emailn = $_POST ["emailn"];
+		$email = $_POST ["email"];
 		$senha = $_POST ["senha"];
-		$confirma = $_POST ["confirma"];
+		//$confirma = $_POST ["confirma"];
 		$sexo = $_POST ["sexo"];
 		
 		if (strlen(trim($_POST['nome'])) == 0){
@@ -21,10 +23,10 @@ function adicionar () {
                 echo $sobnome . "<br>";
             }
             
-            if (strlen(trim($_POST['emailn'])) == 0){
+            if (strlen(trim($_POST['email'])) == 0){
                echo "Você precisa registrar seu e-mail. <br>"; 
             }else {
-                echo $emailn ."<br>";
+                echo $email ."<br>";
             }
             
             if (strlen(trim($_POST['senha'])) == 0){
@@ -32,14 +34,7 @@ function adicionar () {
             }else{
                 echo $senha ."<br>";
             }
-            
-             if (strlen(trim($_POST['confirma'])) != 'senha'){
-                 echo "A senha não é compatível. <br>";
-             }else{
-                 echo $confirma . "<br>";
-             }
-		
-		echo $sexo;
+
 	}else {
 		exibir ("cliente/formulario");
 	}

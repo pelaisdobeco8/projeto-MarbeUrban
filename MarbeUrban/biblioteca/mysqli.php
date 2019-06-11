@@ -1,7 +1,7 @@
 <?php
 
 function conn() {
-    $cnx = mysqli_connect("localhost", "root", "", "MarbeUrban");
-    if (!$cnx) die('Deu errado a conexao!');
-    return $cnx;
+    $conexao = mysqli_connect("localhost", "root", "", "MarbeUrban");
+    if (!$conexao) die('Deu errado a conexao!');
+    return $conexao;
 }
